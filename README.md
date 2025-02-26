@@ -22,8 +22,8 @@ wsl -v
 wsl -l -o
 ```
 
-> -l -> \--list
-> -o -> \--online
+> -l -> \--list \
+> -o -> \--online \
 > 以上CLI參數相等
 
 這邊我安裝Ubuntu 22.04版
