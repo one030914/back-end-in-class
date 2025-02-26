@@ -112,7 +112,7 @@ import alias? No
 
 然後開啟`package.json`檔案修改`script>dev`的值為```bun --bun next dev --turbopack```
 
-> bun -> 取代npm執行
+> bun -> 取代npm執行 \
 > \--bun -> 取代node.js執行
 
 新增Radix UI與Shadcn元件
