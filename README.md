@@ -132,6 +132,8 @@ base color? Stone
 
 而元件項目為了方便，所以先全部裝，按A選擇全部，以及Enter安裝
 
+```bun dev``` or ```bun run dev``` 執行專案
+
 ### 繳交作業
 
 繳交時，請把`.next`與`node_modules`資料夾移除，前者是放置Next.js的編譯檔，後者是放置專案的模組，兩個資料夾會佔掉很多空間，請記得移除並壓縮上傳。
