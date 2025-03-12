@@ -58,7 +58,7 @@ export default function Page() {
                             <TableRow key={order.id}>
                                 <TableCell>{order.id}</TableCell>
                                 <TableCell>
-                                    <Badge>{order.status}</Badge>
+                                    <Badge className={order.status === "preparing" ? "bg-blue-700" : ""}>{order.status}</Badge>
                                 </TableCell>
                                 <TableCell>{order.total}</TableCell>
                                 <TableCell>{order.table}</TableCell>
