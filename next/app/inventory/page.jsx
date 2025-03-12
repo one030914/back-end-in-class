@@ -58,7 +58,7 @@ export default function Page() {
                             <TableRow key={item.id}>
                                 <TableCell>{item.name}</TableCell>
                                 <TableCell>
-                                    <Badge className={item.stock < item.minStock ? "color-red-700" : ""}>{item.stock}</Badge>
+                                    <Badge className={item.stock < item.minStock ? "bg-red-700" : ""}>{`${item.stock}${items.stock < item.minStock ? " (not enough)" : ""}`}</Badge>
                                 </TableCell>
                                 <TableCell>{item.minStock}</TableCell>
                                 <TableCell>

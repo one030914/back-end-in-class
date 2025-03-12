@@ -134,8 +134,52 @@ base color? Stone
 
 ```bun dev``` or ```bun run dev``` 執行專案
 
-### 繳交作業
+### Git CLI
 
-繳交時，請把`.next`與`node_modules`資料夾移除，前者是放置Next.js的編譯檔，後者是放置專案的模組，兩個資料夾會佔掉很多空間，請記得移除並壓縮上傳。
+初始化
 
-刪除之後如要再次執行專案，首先使用`bun install`來安裝模組，會依照`package.json`裡定義的依賴安裝，`.next`的部分只需再次執行專案就會自動生成了
+```bash
+git init
+```
+
+顯示git狀態
+
+```bash
+git status
+```
+
+新增到Staged狀態
+
+```bash
+git add [address/file]
+```
+
+新增到Unmodified狀態
+
+```bash
+git commit -m "[commit msg]"
+```
+
+上傳Github
+
+```bash
+git push
+```
+
+下載到本地
+
+```bash
+git pull
+```
+
+複製到本地
+
+```bash
+git clone [url]
+```
+
+連結到Github
+
+```bash
+git remote [url]
+```
