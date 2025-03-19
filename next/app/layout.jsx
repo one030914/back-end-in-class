@@ -38,6 +38,7 @@ function Sidebar() {
         <NavLink href="/menu" >Menu</NavLink>
         <NavLink href="/order" >Order</NavLink>
         <NavLink href="/inventory" >Inventory</NavLink>
+        <NavLink href="/blog" >Blog (dynamic route)</NavLink>
         <NavLink href="/" >Next.js template</NavLink>
       </div>
     </nav>
