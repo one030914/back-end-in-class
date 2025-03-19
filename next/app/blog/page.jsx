@@ -16,7 +16,7 @@ export default function Page(){
                             <div className="flex items-center gap-3 mb-2">
                                 <img src={user.avatar} alt={`User ${post.userId}'s avatar`} className="w-10 h-10 rounded-full"/>
                                 <Link href={`/blog/users/${user.id}`}>
-                                    <span className="text-gray-500 hover:bg-blue-300">User {user.id}: {user.name}</span>
+                                    <span className="text-gray-500 hover:bg-blue-300">Author #{user.id}: {user.name}</span>
                                 </Link>
                             </div>
                                 <Link href={`/blog/posts/${post.id}`}>

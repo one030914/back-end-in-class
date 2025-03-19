@@ -20,7 +20,7 @@ export default async function Page({params}){
                     <div>
                         <h1>{post.title}</h1>
                         <Link href={`/blog/users/${user.id}`} className="text-gray-500 hover:bg-blue-300">
-                            Author {user.id}: {user.name}
+                            Author #{user.id}: {user.name}
                         </Link>
                     </div>
                 </div>
