@@ -4,12 +4,12 @@ import { revalidatePath } from "next/cache";
 
 export default async function addTodo(formData) {
     const id = Number(formData.get("id"));
-    try{
+    try {
         await prisma.todo.delete({
-            where: {id},
+            where: { id },
         });
         revalidatePath("/todo");
-    }catch (error){
+    } catch (error) {
         console.log(error);
     }
 }

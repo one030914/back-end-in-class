@@ -1,6 +1,6 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import {
     Table,
     TableBody,
@@ -10,29 +10,28 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from "@/components/ui/table"
+} from "@/components/ui/table";
 
 const items = [
     {
         id: "1",
         name: "bacon",
         stock: 20,
-        minStock: 10
+        minStock: 10,
     },
     {
         id: "2",
         name: "egg",
         stock: 8,
-        minStock: 20
+        minStock: 20,
     },
     {
         id: "3",
         name: "bread",
         stock: 20,
-        minStock: 15
+        minStock: 15,
     },
-    
-]
+];
 
 export default function Page() {
     return (
@@ -58,7 +57,11 @@ export default function Page() {
                             <TableRow key={item.id}>
                                 <TableCell>{item.name}</TableCell>
                                 <TableCell>
-                                    <Badge className={item.stock < item.minStock ? "bg-red-700" : ""}>{`${item.stock}${items.stock < item.minStock ? " (not enough)" : ""}`}</Badge>
+                                    <Badge
+                                        className={item.stock < item.minStock ? "bg-red-700" : ""}
+                                    >{`${item.stock}${
+                                        items.stock < item.minStock ? " (not enough)" : ""
+                                    }`}</Badge>
                                 </TableCell>
                                 <TableCell>{item.minStock}</TableCell>
                                 <TableCell>
@@ -70,5 +73,5 @@ export default function Page() {
                 </Table>
             </div>
         </div>
-    )
+    );
 }

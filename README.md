@@ -136,50 +136,13 @@ base color? Stone
 
 ### Git CLI
 
-初始化
-
-```bash
-git init
-```
-
-顯示git狀態
-
-```bash
-git status
-```
-
-新增到Staged狀態
-
-```bash
-git add [address/file]
-```
-
-新增到Unmodified狀態
-
-```bash
-git commit -m "[commit msg]"
-```
-
-上傳Github
-
-```bash
-git push
-```
-
-下載到本地
-
-```bash
-git pull
-```
-
-複製到本地
-
-```bash
-git clone [url]
-```
-
-連結到Github
-
-```bash
-git remote [url]
-```
+| Syntax                         | 說明                   |
+|:------------------------------ |:---------------------- |
+| `git init`                     | git 初始化             |
+| `git status`                   | 顯示 git 狀態          |
+| `git add [address/file]`       | 新增到 Staged 狀態     |
+| `git commit -m "[commit msg]"` | 新增到 Unmodified 狀態 |
+| `git push`                     | 上傳 Github            |
+| `git pull`                     | 下載到本地             |
+| `git clone [url]`              | 複製到本地             |
+| `git remote [url]`             | 連結到 Github          |

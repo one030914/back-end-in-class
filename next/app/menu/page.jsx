@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
     Table,
     TableBody,
@@ -8,7 +8,7 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from "@/components/ui/table"
+} from "@/components/ui/table";
 
 const foods = [
     {
@@ -26,7 +26,7 @@ const foods = [
         name: "egg roll",
         price: 50,
     },
-]
+];
 
 export default function Page() {
     return (
@@ -54,5 +54,5 @@ export default function Page() {
                 </Table>
             </div>
         </div>
-    )
+    );
 }

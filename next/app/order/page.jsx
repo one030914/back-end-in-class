@@ -1,6 +1,6 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import {
     Table,
     TableBody,
@@ -10,7 +10,7 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from "@/components/ui/table"
+} from "@/components/ui/table";
 
 const orders = [
     {
@@ -31,7 +31,7 @@ const orders = [
         total: 100,
         table: "takeout",
     },
-]
+];
 
 export default function Page() {
     return (
@@ -58,7 +58,13 @@ export default function Page() {
                             <TableRow key={order.id}>
                                 <TableCell>{order.id}</TableCell>
                                 <TableCell>
-                                    <Badge className={order.status === "preparing" ? "bg-blue-700" : ""}>{order.status}</Badge>
+                                    <Badge
+                                        className={
+                                            order.status === "preparing" ? "bg-blue-700" : ""
+                                        }
+                                    >
+                                        {order.status}
+                                    </Badge>
                                 </TableCell>
                                 <TableCell>{order.total}</TableCell>
                                 <TableCell>{order.table}</TableCell>
@@ -72,5 +78,5 @@ export default function Page() {
                 </Table>
             </div>
         </div>
-    )
+    );
 }

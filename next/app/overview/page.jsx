@@ -8,5 +8,5 @@ export default function Page() {
                 <div className="p-4 bg-stone-400 rounded-lg shadow">Sales: $0</div>
             </div>
         </div>
-    )
+    );
 }
