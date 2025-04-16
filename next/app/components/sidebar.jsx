@@ -12,6 +12,7 @@ export default function Sidebar() {
           <NavLink href="/blog" >Blog (dynamic route)</NavLink>
           <NavLink href="/test" >Template Test</NavLink>
           <NavLink href="/home" >Suspension Menu</NavLink>
+          <NavLink href="/todo" >Todo</NavLink>
           <NavLink href="/" >Next.js template</NavLink>
         </div>
       </nav>
