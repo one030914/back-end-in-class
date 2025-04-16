@@ -146,3 +146,13 @@ base color? Stone
 | `git pull`                     | 下載到本地             |
 | `git clone [url]`              | 複製到本地             |
 | `git remote [url]`             | 連結到 Github          |
+
+### Prisma init
+
+`bun add -D prisma` 新增 Prisma 模組到 `devDependencies` 中
+
+`bun add @prisma/client` 新增 Prisma Client 端
+
+`bunx prisma init` 初始化 Prisma
+
+`bunx prisma migrate dev --name "[name]"` 更新本地資料庫綱要到雲端資料庫
