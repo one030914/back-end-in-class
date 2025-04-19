@@ -56,11 +56,17 @@ Ubuntu 終端機可在開始的快捷欄或是 Window11 終端機的下拉式選
 
 這邊先列出幾個基本 Linux OS 常用的檔案操作 CLI
 
-| CLI                | 意思                                                                                           |
-|:------------------ |:---------------------------------------------------------------------------------------------- |
-| `cd <PATH>`        | (change directory) 移動到某個路徑，同 Windows                                                  |
-| `ls [-arg] <PATH>` | (list directory contents) 檢視目前工作路徑底下的資料，參數與路徑可選，Windows 是使用 ```dir``` |
-| `mkdir <name>`     | (make directory) 創建資料夾，同 Windows                                                        |
+```bash
+# 移動到某個路徑 (change directory)
+cd <PATH>
+
+# 查看指定路徑底下的所有資料 (list directory contents)
+ls -a <PATH>
+# -a        包含隱藏檔的所有資料
+
+# 創建資料夾 (make directory)
+mkdir <name>
+```
 
 如專案要放在 `D:\myproject\` 底下，Ubuntu 終端機需移動到
 
@@ -148,6 +154,25 @@ docker exec -it -d <name/ID> bash
 
 按 `CTRL + D` 是退出 container，如果有背景執行想完全關閉按 `CTRL + P` 接著 `CTRL + Q`
 
+### Push Image
+
+最後如果建置的 image 或 container 都沒問題，你可以把 image 上傳到自己的 Docker Hub 以便下次使用
+
+首先要重新命名 image
+
+```bash
+docker tag <name> <name/ID>
+# <name>        要更改的名字，需改成 <your docker username>/<image name>
+# <name/ID>     要被更改的 image 名稱或 ID
+```
+
+這樣就會有兩個不同名且同 ID 的 image，然後再 push 到 Docker Hub
+
+```bash
+docker push <name/ID>
+# <name/ID>     要上傳的 image 名稱或 ID
+```
+
 ### Dev Container（額外）
 
 在 VS code Extension 中有 [Dev Container](https://marketplace.cursorapi.com/items?itemName=ms-vscode-remote.remote-containers) 提供更方便管理在 container 中的檔案
@@ -183,7 +208,7 @@ import alias? No
 
 安裝 VScode extension，[Next.js](https://marketplace.cursorapi.com/items?itemName=foxundermoon.next-js) 與 [Tailwind CSS IntelliSense](https://marketplace.cursorapi.com/items?itemName=bradlc.vscode-tailwindcss)
 
-然後開啟 `package.json` 檔案修改 `script>dev` 的值為 ```bun --bun next dev --turbopack```
+然後開啟 `package.json` 檔案修改 `script>dev` 的值為 `bun --bun next dev --turbopack`
 
 > bun -> 取代 npm 執行 \
 > \--bun -> 取代 node.js 執行
@@ -205,11 +230,13 @@ base color? Stone
 
 而元件項目為了方便，所以先全部裝，按 A 選擇全部，以及 Enter 安裝
 
-最後 ```bun dev``` or ```bun run dev``` 執行專案
+最後 `bun dev` or `bun run dev` 執行專案
 
-## CLI
+如果是從 Github 上拉下來的專案，裡面不會有 node_modules 資料夾（放模組的地方），所以記得先 `bun install` 來安裝模組才能執行專案
 
-### Git CLI
+## Git
+
+### CLI
 
 | CLI                            | 說明                                    |
 |:------------------------------ |:--------------------------------------- |
@@ -227,7 +254,13 @@ base color? Stone
 | `git checkout -d <name>`       | 新增並切換分支                                |
 | `git switch -c <name>`         | 新增並切換分支 (Git v2.33 引入)               |
 
-### Prisma CLI
+## Prisma
+
+在 .gitignore 中會包含 .env*，通常是會把 .env 忽略掉，因為裡面會是放比較隱私的資料
+
+但如果你的 repo 是私人或只是測試的話，建議可把這行刪掉
+
+### CLI
 
 | CLI                                       | 說明                                    |
 |:----------------------------------------- |:--------------------------------------- |
