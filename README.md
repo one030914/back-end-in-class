@@ -20,11 +20,9 @@ wsl -v
 
 ```bash
 wsl -l -o
+# -l or --list      列出所有版本
+# -o or --online    在線上尋找
 ```
-
-> -l -> \--list \
-> -o -> \--online \
-> 以上CLI參數相等
 
 這邊我安裝 Ubuntu 22.04 版
 
@@ -58,13 +56,13 @@ Ubuntu 終端機可在開始的快捷欄或是 Window11 終端機的下拉式選
 
 這邊先列出幾個基本 Linux OS 常用的檔案操作 CLI
 
-| CLI                    | 意思                                                                                          |
-|:---------------------- |:--------------------------------------------------------------------------------------------- |
-| ```cd [PATH]```        | (change directory) 移動到某個路徑，同 Windows                                                  |
-| ```ls [-arg] [PATH]``` | (list directory contents) 檢視目前工作路徑底下的資料，參數與路徑可選，Windows 是使用 ```dir``` |
-| ```mkdir [name]```     | (make directory) 創建資料夾，同 Windows                                                        |
+| CLI                | 意思                                                                                           |
+|:------------------ |:---------------------------------------------------------------------------------------------- |
+| `cd <PATH>`        | (change directory) 移動到某個路徑，同 Windows                                                  |
+| `ls [-arg] <PATH>` | (list directory contents) 檢視目前工作路徑底下的資料，參數與路徑可選，Windows 是使用 ```dir``` |
+| `mkdir <name>`     | (make directory) 創建資料夾，同 Windows                                                        |
 
-如專案要放在 ```D:\myproject\``` 底下，Ubuntu 終端機需移動到
+如專案要放在 `D:\myproject\` 底下，Ubuntu 終端機需移動到
 
 ```bash
 cd /mnt/d/myproject
@@ -94,14 +92,17 @@ cd "my project"
 下載之後，先開啟 Docker Desktop 來啟用 Docker CLI，再到終端機建置 Image
 
 ```bash
-# 建立 image 並命名為 [tag]，來源為指定的 [PATH]
-docker build -t [tag] [PATH]
+# 建立 image
+docker build -t <tag> <PATH>
+# -t            用 <tag> 命名 image
+# <PATH>        要建立 image 的 Dockerfile 位置
 
 # 查看 image
 docker images
 
 # 刪除 image
-docker rmi [name/ID]
+docker rmi <name/ID>
+# <name/ID>     要刪除的 image（可以是名稱或ID）
 ```
 
 ### Run Container
@@ -110,42 +111,42 @@ docker rmi [name/ID]
 
 ```bash
 # 從 Docker Hub 拉 image
-docker pull [tag]
+docker pull <tag>
 
 # Run container
-docker run -it --name [name] -d -p 3000:3000 [name/ID]
+docker run -it --name [name] -d -p 3000:3000 <name/ID>
 # -it           讓容器可以互動（interactive + tty）
 # --name        指定容器名稱
 # -d            背景執行（detached mode）
 # -p 3000:3000  將主機的 3000 port 映射到容器的 3000 port
-# [name/ID]     要執行的 image（可以是名稱或 ID）
+# <name/ID>     要執行的 image（可以是名稱或 ID）
 
 # 查看 container
 docker ps -a
 # -a            查看所有（包含關閉）的 container
 
 # 刪除 container
-docker rm [name/ID]
-# [name/ID]     要刪除的 container（可以是名稱或 ID）
+docker rm <name/ID>
+# <name/ID>     要刪除的 container（可以是名稱或 ID）
 
 # 開啟 container
-docker start [name/ID]
-# [name/ID]     要開啟的 container（可以是名稱或 ID）
+docker start <name/ID>
+# <name/ID>     要開啟的 container（可以是名稱或 ID）
 
 # 關閉 container
-docker stop [name/ID]
-# [name/ID]     要關閉的 container（可以是名稱或 ID）
+docker stop <name/ID>
+# <name/ID>     要關閉的 container（可以是名稱或 ID）
 
 # 進入 container
-docker exec -it -d [name/ID] bash
+docker exec -it -d <name/ID> bash
 # -it           讓容器可以互動（interactive + tty）
 # -d            背景執行（detached mode）
-# [name/ID]     要開啟的 container（可以是名稱或 ID）
+# <name/ID>     要開啟的 container（可以是名稱或 ID）
 ```
 
-在執行上面的 docker run 後會直接進入 container，因為環境的 OS 是 Debain Linux 且有 bun 與 git，所以可以在終端機裡面拉你的 github repo 並且執行
+在執行上面的 docker run 後會直接進入 container，因為環境的 OS 是 Debain Linux 且有 bun 與 git，所以可以在 container 中拉你的 github repo 並且執行
 
-按 `CTRL + D` 是退出 container，如果有背景執行按 `CTRL + P` 接著 `CTRL + Q`
+按 `CTRL + D` 是退出 container，如果有背景執行想完全關閉按 `CTRL + P` 接著 `CTRL + Q`
 
 ### Dev Container（額外）
 
@@ -160,8 +161,8 @@ docker exec -it -d [name/ID] bash
 創建 Next.js 專案並移動到專案裡
 
 ```bash
-bun create next-app [name]
-cd [name]
+bun create next-app <name>
+cd <name>
 ```
 
 創建途中有好幾個選項，請依序選擇
@@ -178,7 +179,7 @@ import alias? No
 
 ### VScode 環境
 
-安裝完後使用 VScode 開啟專案 ```code .```
+安裝完後使用 VScode 開啟專案 `code <PATH>`
 
 安裝 VScode extension，[Next.js](https://marketplace.cursorapi.com/items?itemName=foxundermoon.next-js) 與 [Tailwind CSS IntelliSense](https://marketplace.cursorapi.com/items?itemName=bradlc.vscode-tailwindcss)
 
@@ -210,16 +211,21 @@ base color? Stone
 
 ### Git CLI
 
-| CLI                            | 說明                   |
-|:------------------------------ |:---------------------- |
-| `git init`                     | git 初始化             |
-| `git status`                   | 顯示 git 狀態          |
-| `git add [address/file]`       | 新增到 Staged 狀態     |
-| `git commit -m "[commit msg]"` | 新增到 Unmodified 狀態 |
-| `git push`                     | 上傳 Github            |
-| `git pull`                     | 下載到本地             |
-| `git clone [url]`              | 複製到本地             |
-| `git remote [url]`             | 連結到 Github          |
+| CLI                            | 說明                                    |
+|:------------------------------ |:--------------------------------------- |
+| `git init`                     | git 初始化                              |
+| `git status`                   | 顯示 git 狀態                           |
+| `git add <address/file>`       | 新增檔案到暫存區 (Staged 狀態)          |
+| `git commit -m "<commit msg>"` | 提交暫存區到本地 repo (Unmodified 狀態) |
+| `git reset`                    | 重置提交的版本                          |
+| `git push`                     | 上傳到雲端 repo                         |
+| `git pull`                     | 下載到本地 repo                         |
+| `git clone <url>`              | 複製到本地 repo                         |
+| `git remote <url>`             | 連結到雲端 repo                         |
+| `git fetch [alias]`            | 拉雲端資料到本地                        |
+| `git branch`                   | 看查分支                                |
+| `git checkout -d <name>`       | 新增並切換分支                                |
+| `git switch -c <name>`         | 新增並切換分支 (Git v2.33 引入)               |
 
 ### Prisma CLI
 
@@ -228,4 +234,4 @@ base color? Stone
 | `bun add -D prisma`                       | 新增 Prisma 模組到 `devDependencies` 中 |
 | `bun add @prisma/client`                  | 新增 Prisma Client 端                   |
 | `bunx prisma init`                        | 初始化 Prisma                           |
-| `bunx prisma migrate dev --name "[name]"` | 更新本地資料庫綱要到雲端資料庫          |
+| `bunx prisma migrate dev --name "<name>"` | 更新本地資料庫綱要到雲端資料庫          |
