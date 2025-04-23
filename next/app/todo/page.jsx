@@ -1,6 +1,7 @@
 import prisma from "@/lib/prisma";
 import addTodo from "@/app/actions/addTodo";
 import deleteTodo from "@/app/actions/deleteTodo";
+import toggleTodo from "@/app/actions/toggleTodo";
 
 export default async function Page() {
     const todos = await prisma.todo.findMany({
@@ -19,7 +20,7 @@ export default async function Page() {
                 />
                 <button
                     type="submit"
-                    className="bg-stone-500 hover:bg-stone-800 text-white font-bold py-2 px-4 rounded"
+                    className="bg-stone-600 hover:bg-stone-800 text-white font-bold py-2 px-4 rounded"
                 >
                     Add Todo
                 </button>
@@ -30,13 +31,23 @@ export default async function Page() {
                         key={todo.id}
                         className="flex justify-between items-center bg-gray-200 px-4 py-2 rounded shadow my-2"
                     >
-                        <span>{todo.title}</span>
+                        <span className={`${todo.isDone ? "line-through" : ""} text-xl font-bold`}>{todo.title}</span>
                         <div className="flex flex-wrap gap-2">
+                            <form action={toggleTodo}>
+                                <input type="hidden" name="id" value={todo.id} />
+                                <input type="hidden" name="isDone" value={todo.isDone} />
+                                <button
+                                    type="submit"
+                                    className={`${todo.isDone ? "bg-blue-600 hover:bg-blue-800" : "bg-green-600 hover:bg-green-800"} text-white font-bold py-2 px-4 rounded`}
+                                >
+                                    {todo.isDone ? "Undo" : "Done"}
+                                </button>
+                            </form>
                             <form action={deleteTodo}>
                                 <input type="hidden" name="id" id={todo.id} value={todo.id} />
                                 <button
                                     type="submit"
-                                    className="bg-red-300 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
+                                    className="bg-red-600 hover:bg-red-800 text-white font-bold py-2 px-4 rounded"
                                 >
                                     Delete
                                 </button>
