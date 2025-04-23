@@ -120,10 +120,11 @@ docker rmi <name/ID>
 docker pull <tag>
 
 # Run container
-docker run -it --name [name] -d -p 3000:3000 <name/ID>
+docker run -it --name [name] -d -v [l_PATH]:[c_PATH] -p 3000:3000 <name/ID>
 # -it           讓容器可以互動（interactive + tty）
 # --name        指定容器名稱
 # -d            背景執行（detached mode）
+# -v            從主機的 [l_PATH] 資料夾掛到 container [c_PATH] 裡面
 # -p 3000:3000  將主機的 3000 port 映射到容器的 3000 port
 # <name/ID>     要執行的 image（可以是名稱或 ID）
 
@@ -150,9 +151,15 @@ docker exec -it -d <name/ID> bash
 # <name/ID>     要開啟的 container（可以是名稱或 ID）
 ```
 
-在執行上面的 docker run 後會直接進入 container，因為環境的 OS 是 Debain Linux 且有 bun 與 git，所以可以在 container 中拉你的 github repo 並且執行
+在執行上面的 docker run 後會直接進入 container，因為環境的 OS 是 Debian Linux 且有 bun 與 git，所以可以在 container 中拉你的 github repo 並且執行
 
 按 `CTRL + D` 是退出 container，如果有背景執行想完全關閉按 `CTRL + P` 接著 `CTRL + Q`
+
+### Compose (進階)
+
+如果你不想要打那麼長的 `docker run` 指令，也可以選擇更進階、更方便的做法－docker compose，這是用來一次開啟多個 container 的 service
+
+首先建立 `docker-compose.yml`，或是使用範例來使用，
 
 ### Push Image
 
@@ -162,7 +169,9 @@ docker exec -it -d <name/ID> bash
 
 ```bash
 docker tag <name> <name/ID>
-# <name>        要更改的名字，需改成 <your docker username>/<image name>
+# <name>        要更改的名字
+#               如要上傳到 Docker Hub
+#               需改成 <docker username>/<image name>
 # <name/ID>     要被更改的 image 名稱或 ID
 ```
 

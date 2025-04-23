@@ -3,6 +3,7 @@ FROM oven/bun:debian
 
 WORKDIR /
 
+# git
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install git-all -y
