@@ -296,3 +296,5 @@ base color? Stone
 | `bun add @prisma/client`                  | 新增 Prisma Client 端                   |
 | `bunx prisma init`                        | 初始化 Prisma                           |
 | `bunx prisma migrate dev --name "<name>"` | 更新本地資料庫綱要到雲端資料庫          |
+| `bunx prisma studio`                      | 查看本地資料庫                          |
+| `bunx prisma generate`                    | 重新生成                                |

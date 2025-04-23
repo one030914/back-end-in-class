@@ -121,7 +121,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/root/back-end-in-class/next/lib/generated/prisma",
+      "value": "/mnt/d/code lib/in class code/back-end-in-class/next/lib/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -139,7 +139,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/root/back-end-in-class/next/prisma/schema.prisma",
+    "sourceFilePath": "/mnt/d/code lib/in class code/back-end-in-class/next/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -153,7 +153,7 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
-  "postinstall": true,
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
