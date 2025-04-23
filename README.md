@@ -93,9 +93,9 @@ cd "my project"
 
 ### Build Image
 
-[這裡](https://github.com/one030914/back-end-in-class/blob/main/Dockerfile)有提供 Dockerfile 範例來建置 Image
+[這裡](https://github.com/one030914/back-end-in-class/blob/main/Dockerfile)有提供 Dockerfile 範例來建置 Image，詳細的語法可以到[這邊](https://www.runoob.com/docker/docker-dockerfile.html)或是網路查詢
 
-下載之後，先開啟 Docker Desktop 來啟用 Docker CLI，再到終端機建置 Image
+完成之後，先開啟 Docker Desktop 來啟用 Docker CLI，再到終端機建置 Image
 
 ```bash
 # 建立 image
@@ -159,7 +159,26 @@ docker exec -it -d <name/ID> bash
 
 如果你不想要打那麼長的 `docker run` 指令，也可以選擇更進階、更方便的做法－docker compose，這是用來一次開啟多個 container 的 service
 
-首先建立 `docker-compose.yml`，或是使用範例來使用，
+首先建立 `docker-compose.yml`，或是使用[這邊](https://github.com/one030914/back-end-in-class/blob/main/docker-compose.yml)的範例，詳細的語法可到[這裡](https://yeasy.gitbook.io/docker_practice/compose/compose_file)或網路查詢
+
+再來使用 `docker compose` 來開啟 service
+
+```bash
+# 開啟 compose service
+docker compose -f [PATH] -p [name] up -d
+# -f            指定某個路徑 [PATH]
+# -p            命名 service 為 [name]
+# -d            背景運行（建議）
+
+# 關閉 compose service
+docker compose -f [PATH] -p [name] down
+# 可以指定某個 compose service 關閉
+
+# 查看 compose service
+docker compose ps
+```
+
+在開啟 service 後，就可以進入 container 操作了。結束時，需要將 service 關閉，因為它會一直在 docker 的進程中運行，如果沒有背景運行的話，可以直接關閉終端機或是按 `CTRL + C`
 
 ### Push Image
 
