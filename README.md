@@ -1,4 +1,4 @@
-## WSL 環境建置
+## Ubuntu Linux 環境建置
 
 ### WSL 安裝
 
@@ -14,14 +14,14 @@ wsl --install
 wsl -v
 ```
 
-### 安裝 Linux
+### Ubuntu Linux 安裝
 
 可先查看有哪些版本可以安裝
 
 ```bash
 wsl -l -o
-# -l or --list      列出所有版本
-# -o or --online    在線上尋找
+# -l, --list      列出所有版本
+# -o, --online    在線上尋找
 ```
 
 這邊我安裝 Ubuntu 22.04 版
@@ -124,7 +124,7 @@ docker run -it --name [name] -d -v [l_PATH]:[c_PATH] -p 3000:3000 <name/ID>
 # -it           讓容器可以互動（interactive + tty）
 # --name        指定容器名稱
 # -d            背景執行（detached mode）
-# -v            從主機的 [l_PATH] 資料夾掛到 container [c_PATH] 裡面
+# -v            從主機的路徑 [l_PATH] 掛載到 container 路徑 [c_PATH]
 # -p 3000:3000  將主機的 3000 port 映射到容器的 3000 port
 # <name/ID>     要執行的 image（可以是名稱或 ID）
 
@@ -155,7 +155,7 @@ docker exec -it -d <name/ID> bash
 
 按 `CTRL + D` 是退出 container，如果有背景執行想完全關閉按 `CTRL + P` 接著 `CTRL + Q`
 
-### Compose (進階)
+### Compose（進階）
 
 如果你不想要打那麼長的 `docker run` 指令，也可以選擇更進階、更方便的做法－docker compose，這是用來一次開啟多個 container 的 service
 
