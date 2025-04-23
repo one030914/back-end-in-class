@@ -120,12 +120,12 @@ docker rmi <name/ID>
 docker pull <tag>
 
 # Run container
-docker run -it --name [name] -d -v [l_PATH]:[c_PATH] -p 3000:3000 <name/ID>
+docker run -it --name [name] -d -v [l_PATH]:[c_PATH] -p [l_port]:[c_port] <name/ID>
 # -it           讓容器可以互動（interactive + tty）
 # --name        指定容器名稱
 # -d            背景執行（detached mode）
 # -v            從主機的路徑 [l_PATH] 掛載到 container 路徑 [c_PATH]
-# -p 3000:3000  將主機的 3000 port 映射到容器的 3000 port
+# -p            將主機的 [l_port] port 映射到容器的 [c_port] port
 # <name/ID>     要執行的 image（可以是名稱或 ID）
 
 # 查看 container
@@ -187,11 +187,11 @@ docker compose ps
 首先要重新命名 image
 
 ```bash
-docker tag <name> <name/ID>
+docker tag <name/ID> <name>
+# <name/ID>     要被更改的 image 名稱或 ID
 # <name>        要更改的名字
 #               如要上傳到 Docker Hub
 #               需改成 <docker username>/<image name>
-# <name/ID>     要被更改的 image 名稱或 ID
 ```
 
 這樣就會有兩個不同名且同 ID 的 image，然後再 push 到 Docker Hub

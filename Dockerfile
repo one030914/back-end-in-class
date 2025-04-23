@@ -10,5 +10,3 @@ RUN apt-get update && \
 
 # 預設啟動指令
 CMD ["/bin/bash"]
-
-EXPOSE 3000
