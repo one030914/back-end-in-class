@@ -36,7 +36,7 @@ export default function Header() {
                             pathname === link.href
                                 ? "bg-stone-700 text-stone-200"
                                 : "bg-stone-200 text-stone-700"
-                        } hover:bg-stone-400 hover:text-stone-600 rounded-md p-2`}
+                        } hover:bg-stone-400 hover:text-white rounded-md p-2`}
                     >
                         {link.text}
                     </Link>
