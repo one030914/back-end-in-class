@@ -1,0 +1,30 @@
+@port = 3000
+@host = http://localhost:{{port}}
+
+GET {{host}}/api/todo
+Content-Type: application/json
+
+###
+GET {{host}}/api/todo?filter=333
+
+###
+POST {{host}}/api/todo
+Content-Type: application/json
+
+{
+    "title": "testing"
+}
+
+###
+GET {{host}}/api/todo/8
+
+###
+DELETE {{host}}/api/todo/9
+
+###
+PATCH {{host}}/api/todo/11
+
+{
+    "title": "PATCHED",
+    "isDone": true
+}
