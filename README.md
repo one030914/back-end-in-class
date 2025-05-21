@@ -234,7 +234,7 @@ import alias? No
 
 安裝完後使用 VScode 開啟專案 `code <PATH>`
 
-安裝 VScode extension，[Next.js](https://marketplace.cursorapi.com/items?itemName=foxundermoon.next-js) 與 [Tailwind CSS IntelliSense](https://marketplace.cursorapi.com/items?itemName=bradlc.vscode-tailwindcss)
+安裝 VScode extension，[Prettier](https://marketplace.cursorapi.com/items?itemName=esbenp.prettier-vscode)、[Next.js](https://marketplace.cursorapi.com/items?itemName=foxundermoon.next-js)、[Tailwind CSS IntelliSense](https://marketplace.cursorapi.com/items?itemName=bradlc.vscode-tailwindcss)、[Prisma](https://marketplace.cursorapi.com/items?itemName=Prisma.prisma)、[REST Client](https://discord.com/channels/1297052460916932648/1297059780841705473/1374742033440444658)
 
 然後開啟 `package.json` 檔案修改 `script>dev` 的值為 `bun --bun next dev --turbopack`
 
@@ -283,10 +283,6 @@ base color? Stone
 | `git switch -c <name>`         | 新增並切換分支 (Git v2.33 引入)               |
 
 ## Prisma
-
-在 .gitignore 中會包含 .env*，通常是會把 .env 忽略掉，因為裡面會是放比較隱私的資料
-
-但如果你的 repo 是私人或只是測試的話，建議可把這行刪掉
 
 ### CLI
 
