@@ -2,7 +2,7 @@
 import prisma from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 
-export default async function addTodo(formData) {
+export default async function deleteTodo(formData) {
     const id = Number(formData.get("id"));
     try {
         await prisma.todo.delete({
