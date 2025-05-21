@@ -1,8 +1,10 @@
 version: "3.9"
 services:
     next:
-        image: one030914/bun_debian:dev
+        image: bun
         container_name: next
         stdin_open: true
         tty: true
         command: bash
+        volumes:
+            - ./:/next

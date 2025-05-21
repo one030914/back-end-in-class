@@ -1,12 +1,15 @@
 # bun
-FROM oven/bun:debian
+FROM oven/bun:slim
 
 WORKDIR /
 
-# git
+# git & node & curl
 RUN apt-get update && \
-    apt-get upgrade -y && \
-    apt-get install git-all -y
+    apt-get install -y git curl && \
+    curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
+    apt-get install -y nodejs && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# 預設啟動指令
+VOLUME /next
+
 CMD ["/bin/bash"]
