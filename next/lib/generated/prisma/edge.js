@@ -181,7 +181,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/root/back-end-in-class/next/lib/generated/prisma",
+      "value": "/next/next/lib/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -199,7 +199,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/root/back-end-in-class/next/prisma/schema.prisma",
+    "sourceFilePath": "/next/next/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -213,11 +213,12 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
+  "postinstall": true,
   "inlineDatasources": {
     "db": {
       "url": {
         "fromEnvVar": "DATABASE_URL",
-        "value": "postgresql://postgres.mlqoivluchehntokmdja:Evh00X9drTGxXhYP@aws-0-ap-northeast-2.pooler.supabase.com:6543/postgres?pgbouncer=true"
+        "value": null
       }
     }
   },
