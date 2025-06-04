@@ -15,6 +15,7 @@ export default function Sidebar() {
                 <NavLink href="/home">Suspension Menu</NavLink>
                 <NavLink href="/todo">Todo</NavLink>
                 <NavLink href="/todo2">Todo2</NavLink>
+                <NavLink href="/mqtt">MQTT</NavLink>
                 <NavLink href="/">Next.js template</NavLink>
             </div>
         </nav>

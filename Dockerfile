@@ -1,7 +1,7 @@
 # bun
 FROM oven/bun:slim
 
-WORKDIR /
+WORKDIR /next
 
 # git & node & curl
 RUN apt-get update && \
@@ -10,6 +10,6 @@ RUN apt-get update && \
     apt-get install -y nodejs && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
-VOLUME /next
+VOLUME ./next
 
-CMD ["/bin/bash"]
+CMD ["bun", "run", "dev"]
